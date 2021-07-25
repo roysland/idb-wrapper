@@ -1,0 +1,21 @@
+{
+  "name": "idb-wrapper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/idb-wrapper.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d dist -s -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.14.8",
+    "@babel/preset-env": "^7.14.8"
+  },
+  "dependencies": {
+    "faker": "^5.5.3"
+  }
+}

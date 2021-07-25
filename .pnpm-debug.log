@@ -1,0 +1,76 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 debug pnpm:package-manifest": {
+    "initial": {
+      "name": "idb-wrapper",
+      "version": "1.0.0",
+      "description": "",
+      "main": "index.js",
+      "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+      },
+      "keywords": [],
+      "author": "",
+      "license": "ISC"
+    },
+    "prefix": "/home/oyvindr/www/pageup.no/libraries/idb-wrapper"
+  },
+  "2 debug pnpm:context": {
+    "currentLockfileExists": false,
+    "storeDir": "/home/oyvindr/.pnpm-store/v3",
+    "virtualStoreDir": "/home/oyvindr/www/pageup.no/libraries/idb-wrapper/node_modules/.pnpm"
+  },
+  "3 debug pnpm:stage": {
+    "prefix": "/home/oyvindr/www/pageup.no/libraries/idb-wrapper",
+    "stage": "resolution_started"
+  },
+  "4 debug pnpm:_dependency_resolved": {
+    "resolution": "registry.npmjs.org/babel-cli/6.26.0",
+    "wanted": {
+      "dependentId": ".",
+      "name": "babel-cli",
+      "rawSpec": "latest"
+    }
+  },
+  "5 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/babel-cli/6.26.0",
+    "requester": "/home/oyvindr/www/pageup.no/libraries/idb-wrapper",
+    "status": "resolved"
+  },
+  "6 debug pnpm:update-check": {
+    "currentVersion": "6.10.3",
+    "latestVersion": "6.10.3"
+  },
+  "7 debug pnpm:fetching-progress": {
+    "attempt": 1,
+    "packageId": "registry.npmjs.org/babel-cli/6.26.0",
+    "size": 8633,
+    "status": "started"
+  },
+  "8 debug pnpm:progress": {
+    "packageId": "registry.npmjs.org/babel-cli/6.26.0",
+    "requester": "/home/oyvindr/www/pageup.no/libraries/idb-wrapper",
+    "status": "fetched"
+  },
+  "9 error pnpm": {
+    "code": "ERR_PNPM_FETCH_404",
+    "hint": "babel-present-env is not in the npm registry, or you have no permission to fetch it.\n\nNo authorization header was set for the request.",
+    "request": {
+      "url": "https://registry.npmjs.org/babel-present-env"
+    },
+    "response": {
+      "size": 0,
+      "timeout": 60000
+    },
+    "pkgName": "babel-present-env",
+    "pkgsStack": [],
+    "err": {
+      "name": "Error",
+      "message": "GET https://registry.npmjs.org/babel-present-env: Not Found - 404",
+      "code": "ERR_PNPM_FETCH_404",
+      "stack": "Error: GET https://registry.npmjs.org/babel-present-env: Not Found - 404\n    at RetryOperation._fn (/home/oyvindr/.nvm/versions/node/v16.5.0/pnpm-global/5/node_modules/.pnpm/pnpm@6.10.3/node_modules/pnpm/dist/pnpm.cjs:79562:18)\n    at processTicksAndRejections (node:internal/process/task_queues:96:5)"
+    }
+  }
+}

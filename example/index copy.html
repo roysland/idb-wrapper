@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/0.5.12/MinFaker.js" integrity="sha512-+qHsuYJbatsUfmvRdKj5xyKJO1othF3ZeK/X6ap2pNJrHYtSdrNmZFTisz79wr+ddh1XIJs3EpsISWYkJEguwQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+    <button id="add">Add a message</button>
+    <button id="read">Read</button>
+    <button id="update">Change Name</button>
+
+    <script type="module">
+        import DB from '../src/idb-wrapper.js'
+        let $db
+        const config = {
+            name: 'TestingDB',
+            version: 2,
+            storeConfig: [
+                {
+                    storeName: 'posts',
+                    key: 'id',
+                    initialData: []
+                },
+                {
+                    storeName: 'categories',
+                    key: 'id',
+                    initialData: []
+                }
+            ]
+        }
+        /* document.addEventListener('DOMContentLoaded', async () => {
+            $db = await DB.open(config)
+        }) */
+        DB.open(config).then((d) => {
+            const $db = d
+        })
+        
+        // Test cases
+        const addData = async () => {
+            let data = { name: Faker.Name.findName() }
+            await DB.add(data, 'posts')
+        }
+
+        const readData = async () => {
+            let data = await DB.idb.posts.findByPK(8)
+            console.log(data)
+        }
+        const updateItem = async () => {
+            const newData = {
+                name: Faker.Name.findName()
+            }
+            let data = await DB.idb.posts.update(8, newData)
+        }
+        const addButton = document.getElementById('add')
+        const readButton = document.getElementById('read')
+        const updateButton = document.getElementById('update')
+        addButton.addEventListener('click', addData)
+        readButton.addEventListener('click', readData)
+        updateButton.addEventListener('click', updateItem)
+        
+    </script>
+</body>
+</html>
